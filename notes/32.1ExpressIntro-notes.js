@@ -203,12 +203,5 @@ module.exports = ExpressError;
 
 // heroku config:set PGSSLMODE=no-verify
 
-// Access Key ID:
-// AKIAXMJ6OAUZHINVS7YZ
-// Secret Access Key:
-// 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
-
-// heroku config:set AWS_ACCESS_KEY_ID=AKIAXMJ6OAUZHINVS7YZ AWS_SECRET_ACCESS_KEY=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
-
 // aws s3 cp myfolder s3://mybucket/myfolder --recursive
 // aws s3 cp static s3://awscarbonprint/static --recursive --exclude ".png" --exclude ".jpg"

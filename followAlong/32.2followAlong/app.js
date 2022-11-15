@@ -1,15 +1,19 @@
 const express = require('express');
+const app = express();
+const catsRoutes = require("./routes/cats")
 const ExpressError = require('./expressError');
 const middleware = require('./middleware');
+const morgan = require("morgan")
 
-const userRoutes = require('./userRoutes');
+// const userRoutes = require('./userRoutes');
 
-const app = express();
 
 app.use(express.json());
-app.use(middleware.logger);
+// app.use(middleware.logger);
+app.use(morgan('dev'))
 
-app.use('/users', userRoutes);
+app.use("/cats", catsRoutes);
+// app.use('/users', userRoutes);
 // app.get('/favicon.ico', (req, res) => res.sendStatus(204))
 
 app.get('/secret', middleware.checkForPassword, (req, res, next) => {
@@ -39,6 +43,4 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-app.listen(3000, function() {
-	console.log('Server is listening on port 3000');
-});
+module.exports = app; 

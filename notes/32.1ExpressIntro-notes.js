@@ -191,6 +191,10 @@ module.exports = ExpressError;
 // nodemon --inspect
 // Use the debugger keyword in code to activate a breakpoint
 
+// Debugging your tests 
+// You can alwys console.log inside of your test files 
+// If you'd like to use the chrome dev tools, write the following: 
+// - node --inspect-brk $(which jest) --runInBand NAME_OF_FILE
 
 
 // Yep. heroku addons create heroku-postgresql:hobby -a <your app name>
